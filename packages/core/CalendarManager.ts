@@ -102,9 +102,10 @@ export const getConnectedCalendars = async (
           if (error.message === "invalid_grant") {
             errorMessage = "Access token expired or revoked";
           }
+          log.error("getConnectedCalendars failed", safeStringify({ error: error.message, item }));
+        } else {
+          log.error("getConnectedCalendars failed", safeStringify({ error: error, item }));
         }
-
-        log.error("getConnectedCalendars failed", safeStringify({ error, item }));
 
         return {
           integration: cleanIntegrationKeys(item.integration),

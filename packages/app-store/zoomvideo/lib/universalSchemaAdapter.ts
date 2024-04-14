@@ -1,5 +1,6 @@
-import type { OAuth2UniversalSchemaWithCalcomBackwardCompatibility } from "_auth/universalSchema";
 import type { z } from "zod";
+
+import type { OAuth2UniversalSchemaWithCalcomBackwardCompatibility } from "../../_auth/universalSchema";
 
 export const adapt = async (
   tokenResponse: z.infer<typeof OAuth2UniversalSchemaWithCalcomBackwardCompatibility>
